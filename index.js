@@ -1,5 +1,4 @@
 
-//const NSFWNET_MODEL_PATH ='web_model/tensorflowjs_model.pb';
 const NSFWNET_WEIGHTS_PATH ='web_model/model.json';
 
 const IMAGE_SIZE = 256;
@@ -20,7 +19,6 @@ const nsfwnetDemo = async () => {
 
   nsfwnet =await tf.loadGraphModel('web_model/model.json');
 
-  //nsfwnet = await tf.loadGraphModel(NSFWNET_MODEL_PATH, NSFWNET_WEIGHTS_PATH);
 
   nsfwnet.predict(tf.zeros([1, IMAGE_CROP_SIZE, IMAGE_CROP_SIZE, 3])).dispose();
 
